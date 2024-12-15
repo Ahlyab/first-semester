@@ -76,9 +76,67 @@ void swap(int &a, int &b)
     b = temp;
 }
 
+int fact(int n)
+{
+    int fact = 1;
+
+    for (int i = 1; i <= n; ++i)
+    {
+        fact *= i;
+    }
+
+    return fact;
+}
+
+bool isPrime(int n)
+{
+    if (n < 1)
+    {
+        return false;
+    }
+    int count = 0;
+    for (int i = 1; i <= n / 2; ++i)
+    {
+        if (n % i == 0)
+        {
+            ++count;
+        }
+    }
+
+    return count == 1;
+}
+
+void func(int n)
+{
+    for (int i = 1; i <= n; ++i)
+    {
+        if (i % 2 == 0)
+        {
+            cout << "Factorial of " << i << " : " << fact(i) << endl;
+        }
+        else
+        {
+            if (isPrime(i))
+            {
+                cout << "Number " << i << " is prime" << endl;
+            }
+            else
+            {
+                cout << "Number " << i << " is not prime" << endl;
+            }
+        }
+    }
+}
+
 int main()
 {
 
+    cout << fact(5) << endl;
+    cout << boolalpha << isPrime(6) << endl;
+
+    func(6);
+
+    /*
     int a = 10;
     int &b = a;
 
@@ -106,6 +164,8 @@ int main()
     {
         cout << mark << endl;
     }
+
+    */
 
     // int a, b;
 
