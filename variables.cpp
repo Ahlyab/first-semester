@@ -9,6 +9,9 @@
     ---------------------------------------
     int a ;
     int b = 10;
+
+    cout << b << endl;
+    cout <<  a << endl; // random value
     ---------------------------------------
 
     garbage value : when a variable is declared but not initialized,
@@ -85,5 +88,24 @@ type casting : converting one data type into other type
 */
 
 /*
-question: write a program
+question 1: write a program that input number of small rooms and large room,
+price for cleaning a small room is 10.5 dollars and for large room it's 17
+calculate total bill and add 18% GST on total bill and print grand total
+
+question 2: write a program to input your name and print it (input your full name)
+
+question 3: write a program take input hours and your task it convert it milli seconds
+
+question 4: write a program that has a function input a number and your task is to iterate
+over the number from 1 and for every even number you have to print it's factorial and for every
+odd number you have to check if it's prime or not
+
+
+Link : https://forms.gle/Ye7WztnJw1r1bMJe7
+
+Deadline : 8PM tomorrow
+source code : https://github.com/Ahlyab/first-semester
+
+Tomorrow's topic : if else, logical operator
+
  */
