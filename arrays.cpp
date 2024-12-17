@@ -20,46 +20,98 @@ how can we store data in an array?
 #include <iostream>
 using namespace std;
 
-int main()
+// returnType function_name(datatype array_name[], int size)
+// always pass array size along the array
+
+int getSmallest(int arr[], int size)
 {
-    int marks[5] = {0};
+    int smallest = INT_MAX;
 
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < size; ++i)
     {
-        cout << "Enter number : ";
-        cin >> marks[i];
-    }
-
-    // cin >> marks[0];
-    // cin >> marks[1];
-    // cin >> marks[2];
-    // cin >> marks[3];
-    // cin >> marks[4];
-
-    int max = INT_MIN;
-
-    for (int i = 0; i < 5; ++i)
-    {
-        if (marks[i] > max)
+        if (arr[i] < smallest)
         {
-            max = marks[i];
+            smallest = arr[i];
         }
     }
 
-    cout << "Largest Number : " << max << endl;
+    return smallest;
+}
 
-    // cout << marks[0] << endl;
-    // cout << marks[1] << endl;
-    // cout << marks[2] << endl;
-    // cout << marks[3] << endl;
-    // cout << marks[4] << endl;
+int getLargest(int arr[], int size)
+{
+    int largest = INT_MIN;
+
+    for (int i = 0; i < size; ++i)
+    {
+        if (arr[i] > largest)
+        {
+            largest = arr[i];
+        }
+    }
+
+    return largest;
+}
+
+int getSecondLargest(int arr[], int size)
+{
+
+    int largest = getLargest(arr, size);
+    int second_largest = INT_MIN;
+
+    for (int i = 0; i < size; ++i)
+    {
+        if (arr[i] > second_largest && arr[i] < largest)
+        {
+            second_largest = arr[i];
+        }
+    }
+
+    return second_largest;
+}
+
+void inputArray(int arr[], int size)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        cout << "Enter number : ";
+        cin >> arr[i];
+    }
+}
+
+int main()
+{
+    const int SIZE = 5;
+    int marks[SIZE] = {0};
+
+    inputArray(marks, SIZE);
+
+    cout << "Smallest number  : " << getSmallest(marks, SIZE) << endl;
+    cout << "Largest number  : " << getLargest(marks, SIZE) << endl;
+    cout << "Second Largest number  : " << getSecondLargest(marks, SIZE) << endl;
+    ;
+
     return 0;
 }
 
 /*
-write a program using array, take 5 numbers as input and find the smallest number
 
-write a program using array, take 5 numbers as input and find the second largest number
+Scenario : you are running a school and your task is to develop a program that input
+5 subject marks and calculate avg number, percentage and grade
+
+(Hint : use array to store marks)
+
+program will have a couple of functions
+1. function that takes array as parameter and take input in it
+2. fucntion that takes array as parameter and return avg
+3. fucntion that takes array as parameter and return percentage
+4. fucntion that takes array as parameter and return grade
+
+you can change function parameters as it seems best to you but functionality should be same
+
+Important Note:
+    call functions and print result in main
+
 
 Link : https://forms.gle/Ye7WztnJw1r1bMJe7
 
